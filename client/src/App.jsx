@@ -6,6 +6,7 @@ import Affirmations from "./components/Affirmations"
 import Journal from "./components/Journal"
 import About from "./components/About"
 import SignIn from "./components/SignIn"
+import SignUp from "./components/SignUp"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navigation from "./components/Navigation/index";
 
@@ -25,6 +26,7 @@ function App() {
             <Route exact path="/journal" component={Journal} />
             <Route exact path="/about" component={About} />
             <Route exact path="/signin" component={SignIn} />
+            <Route exact path="/signup" component={SignUp} />
 
           </Switch>
 
@@ -34,7 +36,23 @@ function App() {
       </container>
     </Router>
   );
+
+
+  /* render() {
+
+    return (
+
+      <div>
+
+        <Calendar />
+      </div>
+    )
+
+
+} */
 }
+
+
 
 
 
