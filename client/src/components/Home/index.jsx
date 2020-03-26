@@ -1,7 +1,6 @@
 import React from "react";
 import "./style.css";
-import { Container } from "reactstrap";
-import PictureForm from "../../components/PictureForm"
+import PictureForm from "../PictureForm"
 import HomePageCard from "../HomePageCard"
 
 function Home(props) {

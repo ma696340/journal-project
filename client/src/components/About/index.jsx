@@ -7,6 +7,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import { grey } from "@material-ui/core/colors";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -41,7 +42,7 @@ function a11yProps(index) {
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: grey
   },
 }));
 
@@ -56,7 +57,7 @@ export default function SimpleTabs() {
   return (
     <div className={classes.root}>
       <header className="head">
-                About
+        About
       </header>
       <AppBar position="static">
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
@@ -68,136 +69,136 @@ export default function SimpleTabs() {
 
         </Tabs>
       </AppBar>
-      <TabPanel value={value} index={0}>
-        <h3>
-          What is an Affirmation? 
+      <TabPanel className="container" value={value} index={0}>
+        <h3 className="font">
+          What is an Affirmation?
         </h3>
-        <br/>
-        <container>
-        <h4>
-        Affirmations are sentences aimed to affect the conscious and the subconscious mind, so that in turn, they affect our behavior, thinking patterns, habits and environment.
-The words composing the affirmation, automatically and involuntarily, bring up related mental images into the mind, which inspire, energize and motivate. The affirmations, and the resultant mental images, 
-get engraved on the subconscious mind, which in turn, changes the behavior, habits, actions and reactions according to the repeated words.
+        <br />
+        <container className="container">
+          <h4>
+            Affirmations are sentences aimed to affect the conscious and the subconscious mind, so that in turn, they affect our behavior, thinking patterns, habits and environment.
+            The words composing the affirmation, automatically and involuntarily, bring up related mental images into the mind, which inspire, energize and motivate. The affirmations, and the resultant mental images,
+            get engraved on the subconscious mind, which in turn, changes the behavior, habits, actions and reactions according to the repeated words.
         </h4>
         </container>
-        <br/>
-        <h3>
+        <br />
+        <h3 h3 className="font">
           What do Affirmations do?
         </h3>
-        <br/>
+        <br />
         <container>
           <h4>
-          They motivate.
-          <br/>
-          <br/>
+            They motivate.
+          <br />
+            <br />
           They keep the mind focused on the goal.
-          <br/>
-          <br/>
+          <br />
+            <br />
           They influence the subconscious mind and activate its powers.
-          <br/>
-          <br/>
+          <br />
+            <br />
           They change the way you think and behave, and this can bring you into contact with new people, who can help you with your goals.
-          <br/>
-          <br/>
+          <br />
+            <br />
           Positive statements make you feel positive, energetic and active, and therefore, put you in a better position to transform your inner and external worlds.
           </h4>
         </container>
       </TabPanel>
-      <TabPanel value={value} index={1}>
-        <h3>
+      <TabPanel className="container" value={value} index={1}>
+        <h3 h3 className="font">
           What is an Intention?
         </h3>
-        <br/>
+        <br />
         <container>
-        <h4>Intentions aren't to be confused with goals: They are about who you want to be, what you wish to contribute to the world, and how you choose to touch the lives of others. 
-        Voicing intentions will take your mind off of your problems and perceived limitations. Instead, it will place your focus on something that will have a positive impact on your life. 
-        Clearly stating how you intend to feel today instead of wishing that you felt better puts the power of change in your own hands.
-        <br/>
-        <br/> 
+          <h4>Intentions aren't to be confused with goals: They are about who you want to be, what you wish to contribute to the world, and how you choose to touch the lives of others.
+          Voicing intentions will take your mind off of your problems and perceived limitations. Instead, it will place your focus on something that will have a positive impact on your life.
+          Clearly stating how you intend to feel today instead of wishing that you felt better puts the power of change in your own hands.
+        <br />
+            <br />
 
 Example: I intend to live in gratitude for all that I have and all that I am, allowing joy and love to fill my heart and positive energy to fill my body.
-<br/>
-<br/>
+<br />
+            <br />
 Example: I intend to show acts of kindness today, opening myself to any possibility to bring joy into the life of another.</h4>
 
         </container>
       </TabPanel>
-      <TabPanel value={value} index={2}>
-        <h3>
+      <TabPanel className="container" value={value} index={2}>
+        <h3 h3 className="font">
           How to Manifest!
         </h3>
-        <br/>
+        <br />
         <container>
-          <h4>
-          When you manifest something into your life, it’s because you consciously called it forward.
-Self manifestation is how we call into being our deepest desires and aspirations.
-<br/>
-<br/>
+          <h4 h3 className="size">
+            When you manifest something into your life, it’s because you consciously called it forward.
+            Self manifestation is how we call into being our deepest desires and aspirations.
+<br />
+            <br />
 
 Some steps to try when manifesting ...
-<br/>
-<br/>
+<br />
+            <br />
 1. Believe in yourself
-<br/>
+<br />
 Acknowledge that you are capable, and through this acknowledgement, allow the desire for a better life to build within you.
-<br/>
-<br/>
+<br />
+            <br />
 2. Create an action plan
-<br/>
+<br />
 Write it down. Read, and reread it. Own your plan, and embody its becoming.
-<br/>
-<br/>
+<br />
+            <br />
 3. Take action
-<br/>
+<br />
 Carry your new base of knowledge, and power, with you as you charge forward into whatever life has to offer next.
-<br/>
-<br/>
+<br />
+            <br />
 4. Focus on the positive
-<br/>
+<br />
 The more you amplify positive emotions, the higher and more powerful your manifestation will be!
-<br/>
-<br/>
+<br />
+            <br />
 5. Visualize
-<br/>
+<br />
 Visualize who it is that you intend to become. Visualize what you want.
-<br/>
-<br/>
-      </h4>
-</container>
+<br />
+            <br />
+          </h4>
+        </container>
       </TabPanel>
-      <TabPanel value={value} index={3}>
-        <h3>
-Creating SMART Goals! 
+      <TabPanel className="container" value={value} index={3}>
+        <h3 h3 className="font">
+          Creating SMART Goals!
         </h3>
-        <br/>
+        <br />
         <container>
           <h4>
-  Specific
-  <br/>
+            Specific
+  <br />
 Aim for specific goals ... simple, sensible, significant
-<br/>
-<br/>
+<br />
+            <br />
 Measurable
-<br/>
+<br />
 Make your goal one you can measure ... meaningful, motivating
-<br/>
-<br/>
+<br />
+            <br />
 Attainable
-<br/>
+<br />
 Avoid aiming too high or too low ... agreed, attainable
-<br/>
-<br/>
+<br />
+            <br />
 Realistic
-<br/>
+<br />
 Choose realistic goals that you can meet and keep you moving forward ... reasonable, realistic, result-based
-<br/>
-<br/>
+<br />
+            <br />
 Trackable/Time-bound
-<br/>
+<br />
 Choose goals you can track over time ... time-based, time limited, time-sensitive
-  <br/>
-  <br/>
-      </h4>
+  <br />
+            <br />
+          </h4>
         </container>
       </TabPanel>
     </div>
