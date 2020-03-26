@@ -1,65 +1,210 @@
-/* import React from "react";
+import React from "react";
 import "./style.css";
+import PropTypes from 'prop-types';
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
 
-function About(props) {
-    return (
-        function About() {
-            return (
-            
-                
-            
-                  <div>
-                
-                      <h1>About</h1>
-                    
-                  </div>
-                
-                    <div size="md-12">
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquet diam tortor, id
-                        consequat mauris ullamcorper eu. Orci varius natoque penatibus et magnis dis
-                        parturient montes, nascetur ridiculus mus. Pellentesque et dui id justo finibus
-                        sollicitudin at et metus. Ut feugiat tellus nec metus commodo, sed suscipit nisi
-                        gravida. Duis eget vestibulum quam, ut porttitor sem. Donec sagittis mi sollicitudin
-                        turpis semper, et interdum risus lobortis. Vestibulum suscipit nunc non egestas
-                        tristique. Proin hendrerit efficitur malesuada. Mauris lorem urna, sodales accumsan
-                        quam non, tristique tempor erat. Nullam non sem facilisis, tempus tortor sit amet,
-                        volutpat nisl. Ut et turpis non nunc maximus mollis a vitae tortor. Pellentesque
-                        mattis risus ac quam laoreet cursus. Praesent suscipit orci neque, vestibulum
-                        tincidunt augue tincidunt non. Duis consequat mattis tortor vitae mattis.
-                      </p>
-                      <p>
-                        Phasellus at rutrum nisl. Praesent sed massa ut ipsum bibendum porttitor. Sed
-                        malesuada molestie velit ac viverra. Quisque a ullamcorper purus. Curabitur luctus mi
-                        ac mi hendrerit semper. Nulla tincidunt accumsan lobortis. Mauris convallis sapien non
-                        nibh porta accumsan. Nunc volutpat tempus porttitor. Nunc congue dictum egestas.
-                        Aliquam blandit mi eu urna scelerisque, vitae volutpat ligula ultricies. Maecenas vel
-                        porta augue. Fusce mauris ex, dignissim et lacinia ut, tempus eget nibh.
-                      </p>
-                      <p>
-                        Etiam ut massa efficitur, gravida sapien non, condimentum sapien. Suspendisse massa
-                        tortor, facilisis in neque sit amet, scelerisque elementum tortor. Nullam eget nibh
-                        sit amet odio lobortis ullamcorper. Nulla bibendum magna nec sem pulvinar lobortis.
-                        Mauris et imperdiet urna, vitae lobortis dui. Nunc elementum elit mi, non mattis enim
-                        congue at. Proin mi lectus, ullamcorper id hendrerit eu, ultricies vitae lacus. Nunc
-                        vehicula, erat eget laoreet condimentum, felis ante malesuada leo, nec efficitur diam
-                        nisi eget nisi. Cras arcu lacus, tristique in bibendum vitae, elementum eget lorem.
-                        Maecenas vestibulum volutpat orci eu pharetra. Praesent vel blandit ante, nec faucibus
-                        libero. Sed ultrices lorem ex, eu facilisis libero convallis ac. Vivamus id dapibus
-                        eros. Nullam tempor sem rhoncus porta semper. Proin bibendum vulputate nisl, fringilla
-                        interdum elit pulvinar eu. Quisque vitae quam dapibus, vestibulum mauris quis, laoreet
-                        massa.
-                      </p>
-                    </div>
-                
-               
-        
-            );
-          }
-    );
+function TabPanel(props) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <Typography
+      component="div"
+      role="tabpanel"
+      hidden={value !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
+    >
+      {value === index && <Box p={3}>{children}</Box>}
+    </Typography>
+  );
 }
 
-export default About; */
+TabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.any.isRequired,
+  value: PropTypes.any.isRequired,
+};
+
+function a11yProps(index) {
+  return {
+    id: `simple-tab-${index}`,
+    'aria-controls': `simple-tabpanel-${index}`,
+  };
+}
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1,
+    backgroundColor: theme.palette.background.paper,
+  },
+}));
+
+export default function SimpleTabs() {
+  const classes = useStyles();
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  return (
+    <div className={classes.root}>
+      <header className="head">
+                About
+      </header>
+      <AppBar position="static">
+        <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
+          <Tab label="What is an Affirmation?" {...a11yProps(0)} />
+          <Tab label="What is an intention?" {...a11yProps(1)} />
+          <Tab label="How do you Manifest?" {...a11yProps(2)} />
+          <Tab label="Creating achievable Goals" {...a11yProps(3)} />
+
+
+        </Tabs>
+      </AppBar>
+      <TabPanel value={value} index={0}>
+        <h3>
+          What is an Affirmation? 
+        </h3>
+        <br/>
+        <container>
+        <h4>
+        Affirmations are sentences aimed to affect the conscious and the subconscious mind, so that in turn, they affect our behavior, thinking patterns, habits and environment.
+The words composing the affirmation, automatically and involuntarily, bring up related mental images into the mind, which inspire, energize and motivate. The affirmations, and the resultant mental images, 
+get engraved on the subconscious mind, which in turn, changes the behavior, habits, actions and reactions according to the repeated words.
+        </h4>
+        </container>
+        <br/>
+        <h3>
+          What do Affirmations do?
+        </h3>
+        <br/>
+        <container>
+          <h4>
+          They motivate.
+          <br/>
+          <br/>
+          They keep the mind focused on the goal.
+          <br/>
+          <br/>
+          They influence the subconscious mind and activate its powers.
+          <br/>
+          <br/>
+          They change the way you think and behave, and this can bring you into contact with new people, who can help you with your goals.
+          <br/>
+          <br/>
+          Positive statements make you feel positive, energetic and active, and therefore, put you in a better position to transform your inner and external worlds.
+          </h4>
+        </container>
+      </TabPanel>
+      <TabPanel value={value} index={1}>
+        <h3>
+          What is an Intention?
+        </h3>
+        <br/>
+        <container>
+        <h4>Intentions aren't to be confused with goals: They are about who you want to be, what you wish to contribute to the world, and how you choose to touch the lives of others. 
+        Voicing intentions will take your mind off of your problems and perceived limitations. Instead, it will place your focus on something that will have a positive impact on your life. 
+        Clearly stating how you intend to feel today instead of wishing that you felt better puts the power of change in your own hands.
+        <br/>
+        <br/> 
+
+Example: I intend to live in gratitude for all that I have and all that I am, allowing joy and love to fill my heart and positive energy to fill my body.
+<br/>
+<br/>
+Example: I intend to show acts of kindness today, opening myself to any possibility to bring joy into the life of another.</h4>
+
+        </container>
+      </TabPanel>
+      <TabPanel value={value} index={2}>
+        <h3>
+          How to Manifest!
+        </h3>
+        <br/>
+        <container>
+          <h4>
+          When you manifest something into your life, it’s because you consciously called it forward.
+Self manifestation is how we call into being our deepest desires and aspirations.
+<br/>
+<br/>
+
+Some steps to try when manifesting ...
+<br/>
+<br/>
+1. Believe in yourself
+<br/>
+Acknowledge that you are capable, and through this acknowledgement, allow the desire for a better life to build within you.
+<br/>
+<br/>
+2. Create an action plan
+<br/>
+Write it down. Read, and reread it. Own your plan, and embody its becoming.
+<br/>
+<br/>
+3. Take action
+<br/>
+Carry your new base of knowledge, and power, with you as you charge forward into whatever life has to offer next.
+<br/>
+<br/>
+4. Focus on the positive
+<br/>
+The more you amplify positive emotions, the higher and more powerful your manifestation will be!
+<br/>
+<br/>
+5. Visualize
+<br/>
+Visualize who it is that you intend to become. Visualize what you want.
+<br/>
+<br/>
+      </h4>
+</container>
+      </TabPanel>
+      <TabPanel value={value} index={3}>
+        <h3>
+Creating SMART Goals! 
+        </h3>
+        <br/>
+        <container>
+          <h4>
+  Specific
+  <br/>
+Aim for specific goals ... simple, sensible, significant
+<br/>
+<br/>
+Measurable
+<br/>
+Make your goal one you can measure ... meaningful, motivating
+<br/>
+<br/>
+Attainable
+<br/>
+Avoid aiming too high or too low ... agreed, attainable
+<br/>
+<br/>
+Realistic
+<br/>
+Choose realistic goals that you can meet and keep you moving forward ... reasonable, realistic, result-based
+<br/>
+<br/>
+Trackable/Time-bound
+<br/>
+Choose goals you can track over time ... time-based, time limited, time-sensitive
+  <br/>
+  <br/>
+      </h4>
+        </container>
+      </TabPanel>
+    </div>
+  );
+}
+
+
 
 
 

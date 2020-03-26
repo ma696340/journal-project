@@ -1,3 +1,5 @@
 module.exports={
-    User: require("./user")
+    User: require("./user"), 
+    ToDo: require("./todo"),
+    Affirmation: require("./affirmation")
 }

@@ -1,14 +1,14 @@
 import React from "react";
 import { Button, Container } from 'reactstrap';
 import Home from "./components/Home/"
-import Calendar from "./components/Calendar"
 import Affirmations from "./components/Affirmations"
-import Journal from "./components/Journal"
+import Calendar from "./components/Calendar"
 import About from "./components/About"
 import SignIn from "./components/SignIn"
 import SignUp from "./components/SignUp"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navigation from "./components/Navigation/index";
+
 
 
 function App() {
@@ -21,9 +21,8 @@ function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/home" component={Home} />
-            <Route exact path="/calendar" component={Calendar} />
             <Route exact path="/affirmations" component={Affirmations} />
-            <Route exact path="/journal" component={Journal} />
+            <Route exact path="/calendar" component={Calendar} />
             <Route exact path="/about" component={About} />
             <Route exact path="/signin" component={SignIn} />
             <Route exact path="/signup" component={SignUp} />
@@ -37,19 +36,6 @@ function App() {
     </Router>
   );
 
-
-  /* render() {
-
-    return (
-
-      <div>
-
-        <Calendar />
-      </div>
-    )
-
-
-} */
 }
 
 

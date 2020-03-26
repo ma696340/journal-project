@@ -1,6 +1,23 @@
 var db = require("../models")
 var passport = require('passport');
+
+
 module.exports = function(app) {
+
+    app.post("/api/affirmation", function(req, res){
+        var newAffirmation = req.body
+        db.Affirmation.create(newAffirmation).then(function(data){
+            res.json(data)
+        })
+    })
+
+
+    app.post("/api/todo", function(req, res){
+        var newTodo = req.body
+        db.ToDo.create(newTodo).then(function(data){
+            res.json(data)
+        })
+    })
 
     // Register User
     app.post('/register', function (req, res) {

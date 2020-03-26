@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { TextField, Button, Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import API from "../../utils/API"
+import SignInPicForm from "../SignInPicForm"
 /* const useStyles = makeStyles(theme => ({
     root: {
         '& .MuiTextField-root': {
@@ -46,7 +47,9 @@ export default class FormPropsTextFields extends Component {
 
   render() {
     return (
+      
       <form noValidate autoComplete="off">
+         <SignInPicForm />
         <div>
           <Container maxWidth="sm">
             <TextField
