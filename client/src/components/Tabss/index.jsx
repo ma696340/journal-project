@@ -9,11 +9,14 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import Notes from "../Notes"
+import API from "../../utils/API";
 
 
-/* This is for the Affirmation Page tabs - named: Tabss */
+/* This is for the Calendar Page tabs - named: Tabs */
 
 function TabPanel(props) {
+    const goal = props.goalValue
     const { children, value, index, ...other } = props;
 
     return (
@@ -84,9 +87,9 @@ export default function FullWidthTabs(props) {
                     variant="fullWidth"
                     aria-label="full width tabs example"
                 >
-                    <Tab label="goals" {...a11yProps(0)} />
-                    <Tab label="intentions" {...a11yProps(1)} />
-                    <Tab label="affirmations" {...a11yProps(2)} />
+                    <Tab label="Enter Goal" {...a11yProps(0)} />
+                    <Tab label="Active Goals" {...a11yProps(1)} />
+                    {/* <Tab label="Item Three" {...a11yProps(2)} /> */}
                 </Tabs>
             </AppBar>
             <SwipeableViews
@@ -99,12 +102,11 @@ export default function FullWidthTabs(props) {
 
                     <TextField
                         id="outlined-textarea"
-                        label="Set a Goal!"
-                        placeholder=""
+                        label="Type Something!"
+                        placeholder="..."
                         multiline
-                        name="goals"
+                        name="goal"
                         variant="outlined"
-                        value={props.goalValue}
                         onChange={props.handleInputChange}
                     />
                     <br />
@@ -114,36 +116,13 @@ export default function FullWidthTabs(props) {
 
 
                 <TabPanel value={value} index={1} dir={theme.direction}>
-                    <TextField
-                        id="outlined-textarea"
-                        label="Set an Intention!"
-                        placeholder=""
-                        multiline
-                        name="intentions"
-                        variant="outlined"
-                        value={props.intentionValue}
-                        onChange={props.handleInputChange}
-                    />
-                    <br />
-                    <br />
-                    <Button onClick={props.handleFormSubmit}>Save</Button>
-                </TabPanel>
+                    
+                    <Notes goal={props.goalValue}/>
 
-                <TabPanel value={value} index={2} dir={theme.direction}>
-                <TextField
-                        id="outlined-textarea"
-                        label="Create an Affirmation!"
-                        placeholder=""
-                        multiline
-                        name="affirmations"
-                        variant="outlined"
-                        value={props.affirmationValue}
-                        onChange={props.handleInputChange}
-                    />
-                    <br />
-                    <br />
-                    <Button onClick={props.handleFormSubmit}>Save</Button>
+
+
                 </TabPanel>
+               
             </SwipeableViews>
         </div>
     );

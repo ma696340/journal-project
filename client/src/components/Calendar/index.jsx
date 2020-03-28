@@ -1,27 +1,46 @@
 import React, { Component } from "react";
 import "./style.css";
 import CalendarPicForm from "../CalendarPicForm"
-import CalendarCard from "../HomePageCard"
-import CalendarTabs from "../CalendarTabs"
 import API from "../../utils/API";
 
 class Calendar extends Component {
     state = {
+        todoArray: [],
         todo: ""
+      
     }
+
+    componentDidMount(){
+        
+        this.getToDos();
+        
+    }
+
+    getToDos = () => {
+        API.GetToDo().then(res => {
+            console.log(res.data)
+            this.setState({todoArray: res.data})
+        })
+    }
+    
+
+
 
     handleFormSubmit = () => {
         alert(this.state.todo);
+        let getToDos = this.getToDos
         //to create an express route to create this entry into your mongodb
         //create api 
         //update the user id to the person who logs in!!!!! right now just 1 ---
         API.CreateToDo({
             ToDo: this.state.todo,
-            userId: "1"
-        }).then(function (data) {
-            console.log(data);
+            
+         }).then(function (data) {
+             console.log(data)  
+            getToDos();
         })
 
+ 
     }
     handleInputChange = (event) => {
         const { name, value } = event.target
@@ -42,7 +61,7 @@ class Calendar extends Component {
                             Let's Set Something <br /> in Motion ...
                         </h1>
                         <CalendarPicForm 
-                        todoValue={this.state.todo} 
+                        todoValue={this.state.todoArray}
                         handleFormSubmit={this.handleFormSubmit} 
                         handleInputChange={this.handleInputChange} />
                     </div>

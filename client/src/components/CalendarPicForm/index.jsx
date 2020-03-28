@@ -3,7 +3,7 @@ import "./style.css";
 import CalendarTabs from "../CalendarTabs";
 
 export default function CalendarPicForm(props){
-
+    console.log(props)
     return(
 
         <div className="backgroundImage" >

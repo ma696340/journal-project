@@ -6,7 +6,7 @@ import Calendar from "./components/Calendar"
 import About from "./components/About"
 import SignIn from "./components/SignIn"
 import SignUp from "./components/SignUp"
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import Navigation from "./components/Navigation/index";
 
 
@@ -14,7 +14,7 @@ import Navigation from "./components/Navigation/index";
 function App() {
   return (
     <Router>
-      <container className="fluid">
+      
 
         
   
@@ -32,7 +32,7 @@ function App() {
           {/* <PictureForm /> */}
 
           <Navigation />
-      </container>
+    
     </Router>
   );
 

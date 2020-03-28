@@ -3,6 +3,7 @@ import { TextField, Button, Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import API from "../../utils/API"
 import SignInPicForm from "../SignInPicForm"
+import { Link } from "react-router-dom";
 /* const useStyles = makeStyles(theme => ({
     root: {
         '& .MuiTextField-root': {
@@ -72,7 +73,7 @@ export default class FormPropsTextFields extends Component {
                         <br/>
                         <Button onClick={this.handleFormSubmit}>Sign In</Button>
                         <br/>
-                        <Button>Sign Up</Button>
+                        <Link to="Signup"><Button>Sign Up</Button></Link>
                     </Container>
                 </div>
                 

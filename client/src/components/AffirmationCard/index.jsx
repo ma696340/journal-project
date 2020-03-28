@@ -37,10 +37,8 @@ export default function AffirmationCard(props) {
   return (
     <Card className={classes.root}>
       <CardContent>
-        <Tabss 
+        <Tabss
         goalValue={props.goalValue}
-        intentionValue={props.intentionValue}
-        affirmationValue={props.affirmationValue}
         handleFormSubmit={props.handleFormSubmit}
         handleInputChange={props.handleInputChange} />
 

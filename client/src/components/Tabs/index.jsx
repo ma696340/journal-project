@@ -9,13 +9,16 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import Note from "../Note"
+import API from "../../utils/API";
 
 
 /* This is for the Calendar Page tabs - named: Tabs */
 
 function TabPanel(props) {
+    const todo = props.todoValue
     const { children, value, index, ...other } = props;
-
+    // console.log(props)
     return (
         <Typography
             component="div"
@@ -84,41 +87,43 @@ export default function FullWidthTabs(props) {
                     variant="fullWidth"
                     aria-label="full width tabs example"
                 >
-                    <Tab label="Item One" {...a11yProps(0)} />
-                    <Tab label="Item Two" {...a11yProps(1)} />
-                    <Tab label="Item Three" {...a11yProps(2)} />
+                    <Tab label="Enter Note" {...a11yProps(0)} />
+                    <Tab label="Active Notes" {...a11yProps(1)} />
+                    {/* <Tab label="Item Three" {...a11yProps(2)} /> */}
                 </Tabs>
             </AppBar>
             <SwipeableViews
                 axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
                 index={value}
                 onChangeIndex={handleChangeIndex}
+                
             >
                 <TabPanel value={value} index={0} dir={theme.direction}>
 
 
                     <TextField
                         id="outlined-textarea"
-                        label="Multiline Placeholder"
-                        placeholder="Placeholder"
+                        label="Type Something!"
+                        placeholder="..."
                         multiline
                         name="todo"
                         variant="outlined"
-                        value={props.todoValue}
                         onChange={props.handleInputChange}
                     />
                     <br />
                     <br />
-                    <Button onClick={props.handleFormSubmit}>Default</Button>
+                    <Button onClick={props.handleFormSubmit}>Save</Button>
                 </TabPanel>
 
 
                 <TabPanel value={value} index={1} dir={theme.direction}>
-                    Item Two
+
+                <Note todo={props.todoValue}/>
+
+
+
                 </TabPanel>
-                <TabPanel value={value} index={2} dir={theme.direction}>
-                    Item Three
-                </TabPanel>
+               
             </SwipeableViews>
         </div>
     );

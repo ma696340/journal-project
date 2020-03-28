@@ -5,25 +5,42 @@ import API from "../../utils/API";
 
 class Affirmations extends Component {
     state = {
-        goal: "",
-        intention: "",
-        affirmation: "",
+        affirmationArray: [],
+        goal: ""
+      
     }
 
+    componentDidMount(){
+        
+        this.getAffirmations();
+        
+    }
+
+    getAffirmations = () => {
+        API.GetAffirmation().then(res => {
+            console.log(res.data)
+            this.setState({affirmationArray: res.data})
+        })
+    }
+    
+
+
+
     handleFormSubmit = () => {
-        alert(this.state.affirmation);
+        alert(this.state.goal);
+        let getAffirmations = this.getAffirmations
         //to create an express route to create this entry into your mongodb
         //create api 
         //update the user id to the person who logs in!!!!! right now just 1 ---
         API.CreateAffirmation({
-            goal: this.state.goal,
-            intention: this.state.intention,
-            affirmation: this.state.affirmation,
-            userId: "1"
-        }).then(function (data) {
-            console.log(data);
+            Affirmation: this.state.goal,
+            
+         }).then(function (data) {
+             console.log(data)  
+            getAffirmations();
         })
 
+ 
     }
     handleInputChange = (event) => {
         const { name, value } = event.target
@@ -44,9 +61,7 @@ class Affirmations extends Component {
                             Let's Set a Goal <br /> in Motion ...
                         </h1>
                         <AffirmationPicForm 
-                        goalValue={this.state.goal} 
-                        intentionValue={this.state.intention}
-                        affirmationValue={this.state.affirmation}
+                        goalValue={this.state.affirmationArray}
                         handleFormSubmit={this.handleFormSubmit} 
                         handleInputChange={this.handleInputChange} />
                     </div>

@@ -33,7 +33,6 @@ const useStyles = makeStyles({
 export default function CalendarCard(props) {
   const classes = useStyles();
 
-
   return (
     <Card className={classes.root}>
       <CardContent>

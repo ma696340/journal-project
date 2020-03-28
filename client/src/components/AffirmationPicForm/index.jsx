@@ -3,14 +3,12 @@ import "./style.css";
 import AffirmationTabs from "../AffirmationTabs";
 
 export default function AffirmationPicForm(props){
-
+    console.log(props)
     return(
 
         <div className="backgroundImage" >
-            <AffirmationTabs   
+            <AffirmationTabs
             goalValue={props.goalValue}
-            intentionValue={props.intentionValue}
-            affirmationValue={props.affirmationValue}
             handleFormSubmit={props.handleFormSubmit} 
             handleInputChange={props.handleInputChange} />
 

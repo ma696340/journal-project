@@ -10,10 +10,13 @@ function Home(props) {
         <div className="background">
             <form>
             <div className="form-group">
-
-            <h1 className="title">
+                
+            <h2 className="title">
+                ~ Journal Notes ~
+                <br/>
+                <br/>
 Welcome back ... User
-                </h1>  
+                </h2>  
 
 <PictureForm />
 <HomePageCard />

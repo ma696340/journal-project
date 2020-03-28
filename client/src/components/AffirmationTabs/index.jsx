@@ -22,10 +22,8 @@ export default function CenteredTabs(props) {
   return (
     <container>
 
-      <AffirmationCard 
+      <AffirmationCard  
       goalValue={props.goalValue}
-      intentionValue={props.intentionValue} 
-      affirmationValue={props.affirmationValue}
       handleFormSubmit={props.handleFormSubmit} 
       handleInputChange={props.handleInputChange} />
     </container>

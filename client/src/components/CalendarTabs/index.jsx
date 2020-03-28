@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-
 import CalendarCard from '../CalendarCard';
 
 const useStyles = makeStyles({
@@ -15,6 +14,7 @@ const useStyles = makeStyles({
 export default function CenteredTabs(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
+  
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -24,7 +24,7 @@ export default function CenteredTabs(props) {
     <container>
 
       <CalendarCard 
-      todoValue={props.todoValue} 
+      todoValue={props.todoValue}
       handleFormSubmit={props.handleFormSubmit} 
       handleInputChange={props.handleInputChange} />
     </container>

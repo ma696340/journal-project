@@ -4,11 +4,15 @@ const express = require("express");
  
 const app = express();
 const PORT = process.env.PORT || 3001;
+/* const todoRoutes = express.Router; */
 
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var mongoose = require('mongoose');
 var passport = require('passport');
+
+
+let db = require("./models");
  
 
 
@@ -36,12 +40,12 @@ routes(app);
 /* if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/public"));
 } */
- 
 
 
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/journal-project");
+
 
 // Start the API server
 app.listen(PORT, function() {
