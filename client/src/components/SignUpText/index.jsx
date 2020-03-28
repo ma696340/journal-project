@@ -3,7 +3,7 @@ import { TextField, Button, Container } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import API from "../../utils/API";
 import SignInPicForm from "../SignInPicForm";
-
+import { Link } from "react-router-dom";
 export default class FormPropsTextFields extends Component {
   state = {
     name: "",
@@ -82,6 +82,9 @@ export default class FormPropsTextFields extends Component {
             <br />
             <Button onClick={this.handleFormSubmit}>Sign Up</Button>
             <br />
+            <Link to="signin">
+        <Button>Back to Sign In</Button>
+            </Link>
           </Container>
         </div>
       </form>
