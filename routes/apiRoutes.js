@@ -2,6 +2,7 @@ var db = require("../models")
 var passport = require('passport');
 /* var API = require("") */
 
+var axios = require ("axios");
 
 module.exports = function(app) {
 
@@ -101,7 +102,18 @@ module.exports = function(app) {
         req.logout();
         res.send(null)
     });
-
+    app.get("/api/quotes", function (req, res){
+        console.log(req.body)
+         axios.get("https://healthruwords.p.rapidapi.com/v1/quotes/?id=731&t=Wisdom&maxR=1&size=medium", {
+            headers: {
+                "x-rapidapi-host": "healthruwords.p.rapidapi.com",
+                "x-rapidapi-key": "8afe20fb60msh92afee149aba459p1c02dfjsn54fae9cd3393"
+            }
+         }).then(function(response){
+             console.log(response.data)
+             res.json(response.data);
+         })
+    }) 
 }
 
  

@@ -1,13 +1,6 @@
-import React from "react"
-import "./style.css"
+import React from "react";
+import "./style.css";
 
-export default function SignInPicForm(){
-
-    return(
-
-        <div className="backgroundImage" >
-
-         
-        </div>
-    )
+export default function SignInPicForm() {
+  return <div className="backgroundImage"></div>;
 }

@@ -1,7 +1,5 @@
 import axios from "axios";
 
-
-
 export default   {
     SignIn: function(userData) {
         return axios.post("/login", userData)
@@ -37,8 +35,8 @@ export default   {
     PutAffirmation: function(id, userData) {
         return axios.put("api/affirmation/update/" + id, userData);
     },
+
+    GetQuotes: function(){
+        return axios.get("api/quotes")
+    }
 }
-
-
-
-/* need to work on this above for the Sign up */

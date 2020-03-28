@@ -1,13 +1,7 @@
-import React from "react"
-import "./style.css"
-import { Container } from "reactstrap"
-export default function PictureForm(){
+import React from "react";
+import "./style.css";
+import { Container } from "reactstrap";
 
-    return(
-
-        <div className="backgroundImage" >
-
-         
-        </div>
-    )
-}
+export default function PictureForm() {
+  return <div className="backgroundImage"></div>;
+};

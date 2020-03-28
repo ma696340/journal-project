@@ -1,6 +1,6 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import AffirmationCard from '../AffirmationCard';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import AffirmationCard from "../AffirmationCard";
 
 const useStyles = makeStyles({
   root: {
@@ -8,7 +8,7 @@ const useStyles = makeStyles({
     marginTop: 20,
     marginRight: 20,
     marginLeft: 700
-  },
+  }
 });
 
 export default function CenteredTabs(props) {
@@ -21,11 +21,11 @@ export default function CenteredTabs(props) {
 
   return (
     <container>
-
-      <AffirmationCard  
-      goalValue={props.goalValue}
-      handleFormSubmit={props.handleFormSubmit} 
-      handleInputChange={props.handleInputChange} />
+      <AffirmationCard
+        goalValue={props.goalValue}
+        handleFormSubmit={props.handleFormSubmit}
+        handleInputChange={props.handleInputChange}
+      />
     </container>
   );
 }

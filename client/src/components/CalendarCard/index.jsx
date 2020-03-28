@@ -1,10 +1,9 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
 import Tabs from "../Tabs";
-
 
 const useStyles = makeStyles({
   root: {
@@ -13,21 +12,19 @@ const useStyles = makeStyles({
     top: 20,
     right: 20,
     left: 710,
-    bottom: 20,
-
-
+    bottom: 20
   },
   bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
+    display: "inline-block",
+    margin: "0 2px",
+    transform: "scale(0.8)"
   },
   title: {
-    fontSize: 14,
+    fontSize: 14
   },
   pos: {
-    marginBottom: 12,
-  },
+    marginBottom: 12
+  }
 });
 
 export default function CalendarCard(props) {
@@ -36,11 +33,11 @@ export default function CalendarCard(props) {
   return (
     <Card className={classes.root}>
       <CardContent>
-        <Tabs 
-        todoValue={props.todoValue}
-        handleFormSubmit={props.handleFormSubmit}
-        handleInputChange={props.handleInputChange} />
-
+        <Tabs
+          todoValue={props.todoValue}
+          handleFormSubmit={props.handleFormSubmit}
+          handleInputChange={props.handleInputChange}
+        />
       </CardContent>
       <CardActions>
         {/* <Button size="small">Learn More</Button> */}
